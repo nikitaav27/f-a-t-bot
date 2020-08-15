@@ -17,12 +17,6 @@ const bot = new Telegraf(config.token)
 // bot.use((ctx) => { console.log('Бот запущен')})
 // bot.startPolling()
 
-
-
-
-// const app = new Koa()
-
-
 bot.command('start', ({ reply }) => {
   return reply('Что случилось?', Markup
     .keyboard([
@@ -368,7 +362,7 @@ bot.action('Как зафикстировать конечность', async (ct
 
 bot.launch()
 
-bot.telegram.setWebhook('https://https://git.heroku.com/f-a-t-bot.git/secret-path')
+bot.telegram.setWebhook('https://git.heroku.com/f-a-t-bot.git/secret-path')
 
 const app = new Koa()
 app.use(koaBody())
@@ -377,79 +371,3 @@ app.use((ctx, next) => ctx.method === 'POST' || ctx.url === '/secret-path'
   : next()
 )
 app.listen(3000)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// bot.command('menu',(ctx) => {
-//
-//   ctx.telegram.sendMessage (ctx.chat.id, 'lalalalla', {
-//     reply_markup: {
-//       keyboard: keyboard.type
-//     }
-//   })
-// })
-
-
-
-//
-// function forstr(str) {
-//
-// }
-  // bot.telegram.sendMessage( ctx.chat.id,ctx.message.message_id )
-  // bot.telegram.sendMessage('Enter a message')
-  //
-  // ctx.forwardMessage (ctx.chat.id,ctx.chat.id,ctx.message.message_id)
-  // console.log(ctx.chat.id)
-// bot.telegram.deleteMessage(ctx.chat.id, messageId)
-
-//
-//   if (ctx.message.text === 'hi') {
-//     ctx.reply('Привет')
-//   } else if (ctx.message.text === 'bay') {
-//     ctx.reply('Пока')
-//   } else{
-//
-//   switch (ctx.message.text) {
-//     case kb.back:
-//     ctx.telegram.sendMessage (ctx.chat.id, 'Чтобы открыть клавитуру введите /menu', {
-// //       reply_markup: JSON.stringify(
-// //         {
-// //           hide_keyboard: true
-// //         }
-// //       )
-// //   })
-// //
-// // })
-//  }
-// })
