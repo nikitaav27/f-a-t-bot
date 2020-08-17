@@ -5,7 +5,7 @@ const config = require('./config.json')
 const Koa = require('koa')
 const koaBody = require('koa-body')
 
-require('https').createServer().listen(process.env.PORT || 5000).on('request', function(req, res){
+require('https').createServer().listen(process.env.PORT || 3000).on('request', function(req, res){
   res.end('')
 })
 
@@ -362,7 +362,7 @@ bot.action('Как зафикстировать конечность', async (ct
 
 bot.launch()
 
-bot.telegram.setWebhook('https://git.heroku.com/f-a-t-bot.git/secret-path')
+// bot.telegram.setWebhook('https://git.heroku.com/f-a-t-bot.git/secret-path')
 
 const app = new Koa()
 app.use(koaBody())
