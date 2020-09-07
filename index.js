@@ -4,9 +4,9 @@ const config = require('./config.json')
 const Koa = require('koa')
 const koaBody = require('koa-body')
 
-// require('https').createServer().listen(process.env.PORT || 5000).on('request', function(req, res){
-//   res.end('')
-// })
+require('https').createServer().listen(process.env.PORT || 5000).on('request', function(req, res){
+  res.end('')
+})
 
 const Extra = require('telegraf/extra')
 const Markup = require('telegraf/markup')
