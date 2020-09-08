@@ -4,9 +4,9 @@ const config = require('./config.json')
 const Koa = require('koa')
 const koaBody = require('koa-body')
 
-require('https').createServer().listen(process.env.PORT || 5000).on('request', function(req, res){
-  res.end('')
-})
+// require('https').createServer().listen(process.env.PORT || 5000).on('request', function(req, res){
+//   res.end('')
+// })
 
 const Extra = require('telegraf/extra')
 const Markup = require('telegraf/markup')
@@ -32,9 +32,9 @@ bot.command('start', async (ctx) => {
 bot.command('menu', ({ reply }) => {
   return reply('Меню', Markup
     .keyboard([
-      ['Сердце', 'Обморок'], // Row1 with 2 buttons
+      ['Сердце', 'Потеря сознания'], // Row1 with 2 buttons
       ['Перелом', 'Кровотечение'],
-      ['Ожог', 'Без сознания']
+      ['Ожог', 'Подавился']
     ])
     .oneTime() // на 1 разработке
     .resize()
@@ -193,9 +193,9 @@ bot.hears('Пока', ctx => {
 bot.hears('Меню', ({ reply }) => {
   return reply('Меню', Markup
     .keyboard([
-      ['Сердце', 'Обморок'], // Row1 with 2 buttons
+      ['Сердце', 'Потеря сознания'], // Row1 with 2 buttons
       ['Перелом', 'Кровотечение'],
-      ['Ожог', 'Без сознания']
+      ['Ожог', 'Подавился']
     ])
     .oneTime() // на 1 разработке
     .resize()
@@ -206,9 +206,9 @@ bot.hears('Меню', ({ reply }) => {
 bot.action('Меню', ({ reply }) => {
   return reply('Меню', Markup
     .keyboard([
-      ['Сердце', 'Обморок'], // Row1 with 2 buttons
+      ['Сердце', 'Потеря сознания'], // Row1 with 2 buttons
       ['Перелом', 'Кровотечение'],
-      ['Ожог', 'Без сознания']
+      ['Ожог', 'Подавился']
     ])
     .oneTime() // на 1 разработке
     .resize()
@@ -217,7 +217,7 @@ bot.action('Меню', ({ reply }) => {
 })
 
 bot.action('Позвонить', async (ctx) => {
-  await ctx.replyWithHTML(`<a href="tel:112">112</a>`)
+  await ctx.replyWithHTML(`📞 позвоните 112 или 103`)
 })
 
 bot.action('Полная', async (ctx) => {
@@ -361,4 +361,3 @@ app.use((ctx, next) => ctx.method === 'POST' || ctx.url === '/secret-path'
   : next()
 )
 app.listen(3000)
-
